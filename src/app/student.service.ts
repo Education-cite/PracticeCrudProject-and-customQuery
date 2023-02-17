@@ -21,7 +21,8 @@ public getAllteacher(){
 
 
   public deleteteacher(id:any){
-    return this.http.delete(`${this.baseUrl}/deleteteacher/${id}`)
+    return this.http.delete(this.baseUrl + '/deleteteacher?id=' +id)
+    
     }
 
 

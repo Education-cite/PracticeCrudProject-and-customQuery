@@ -36,10 +36,10 @@ export class AppComponent {
       }
     )
   }
-  deleteTeacher(){
-    this._studentservice.deleteteacher(null).subscribe(
+  deleteTeacher(teacher:any){
+    this._studentservice.deleteteacher(teacher.id).subscribe(
       (res:any)=>{
-
+        this.getAllteacher();
       }
     )
   }
