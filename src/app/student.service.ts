@@ -10,9 +10,19 @@ export class StudentService {
 
   baseUrl = 'http://localhost:8080/api';
 
-public saveStudent(teacherData:any){
+public saveTeacher(teacherData:any){
 return this.http.post(this.baseUrl + '/saveTeacher',teacherData)
 }
+
+
+public getAllteacher(){
+  return this.http.get(this.baseUrl + '/getAllteacher')
+  }
+
+
+  public deleteteacher(id:any){
+    return this.http.delete(`${this.baseUrl}/deleteteacher/${id}`)
+    }
 
 
 }

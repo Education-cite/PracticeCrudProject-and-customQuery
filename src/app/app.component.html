@@ -39,5 +39,35 @@
 </div>
 
 
+<div class="mt-5">
+
+  <table class="table table-bordered">
+    <thead class="thead">
+    <tr>
+      <th>Teacher Id</th>
+      <th>Teacher Name</th>
+      <th>Teacher Address</th>
+      <th>Teacher Persentage</th>
+      <th> Action</th>
+
+    </tr>
+  </thead>
+  <tbody class="tbody">
+    <tr *ngFor="let teacher of getTeachers">
+      <td>{{teacher.id}}</td>
+      <td>{{teacher.name}}</td>
+      <td>{{teacher.address}}</td>
+      <td>{{teacher.percentage}}</td>
+      <td><button type="button" class="btn btn-primary">Edit</button>&nbsp;
+      <button type="button" class="btn btn-danger" (click)="deleteTeacher()">Delete</button></td>
+
+    </tr>
+
+  </tbody>
+  </table>
+  
+</div>
+
+
 </div>
 

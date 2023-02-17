@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { NgForm } from '@angular/forms';
 import { StudentService } from './student.service';
 
 @Component({
@@ -9,13 +10,39 @@ import { StudentService } from './student.service';
 export class AppComponent {
   title = 'StudentCrudProject';
 
-  constructor(private _studentservice:StudentService){}
+  getTeachers:any
+  
 
-  register(registerForm:any){
-    this._studentservice.saveStudent(registerForm.value).subscribe(
+  
+
+  constructor(private _studentservice:StudentService){this.getAllteacher()}
+
+  register(registerForm:NgForm){
+    this._studentservice.saveTeacher(registerForm.value).subscribe(
       (res)=>{
         console.log(res);
+        registerForm.reset();
+       // this.getAllteacher();
       }
     )
   }
+
+  getAllteacher(){
+    this._studentservice.getAllteacher().subscribe(
+      (res)=>{
+        console.log(res);
+        this.getTeachers=res;
+
+      }
+    )
+  }
+  deleteTeacher(){
+    this._studentservice.deleteteacher(null).subscribe(
+      (res:any)=>{
+
+      }
+    )
+  }
+
+
 }
