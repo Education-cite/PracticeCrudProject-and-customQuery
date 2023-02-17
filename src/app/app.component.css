@@ -1,0 +1,13 @@
+.navbar {
+    background-color: #007bff;
+  }
+  
+  .nav-link {
+    color: #0dc54d !important;
+  }
+  
+  .nav-link:hover {
+    color: #c51212 !important;
+    background-color: #0062cc;
+  }
+  
