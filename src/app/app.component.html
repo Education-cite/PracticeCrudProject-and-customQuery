@@ -5,24 +5,29 @@
 
 <div class="card mt-5" style="padding: 20px;">
 
-<form #registerForm="ngForm" >
+<form #registerForm="ngForm" (ngSubmit)="register(registerForm)">
 
   <div class="from-group">
     <label for="name">Teacher_Name : </label>
     <input type="text" #name (ngModel)="name" name="name" id="name" class="form-control">
-  </div>
+  </div><br>
 
 
   <div class="from-group">
     <label for="address">Teacher_address : </label>
     <input type="text" #address (ngModel)="address" name="address" id="address" class="form-control">
-  </div>
+  </div><br>
 
 
   
   <div class="from-group">
     <label for="percentage">Teacher_percentage : </label>
     <input type="number" #percentage (ngModel)="percentage" name="percentage" id="percentage" class="form-control">
+  </div><br>
+
+
+  <div class="from-group">
+    <input type="submit" value="Register" class="btn btn-primary w-100" >
   </div>
 
 

@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { StudentService } from './student.service';
 
 @Component({
   selector: 'app-root',
@@ -7,4 +8,14 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'StudentCrudProject';
+
+  constructor(private _studentservice:StudentService){}
+
+  register(registerForm:any){
+    this._studentservice.saveStudent(registerForm.value).subscribe(
+      (res)=>{
+        console.log(res);
+      }
+    )
+  }
 }
